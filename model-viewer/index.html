@@ -1,48 +1,43 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>model-viewerデモ</title>
-<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <meta charset="UTF-8">
+  <title>model-viewerデモ</title>
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+  <meta name="robots" content="noindex,noarchive,nofollow,noimageindex">
 
-<meta name="robots" content="noindex,noarchive,nofollow,noimageindex">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;           /* これ大事！ */
+      display: flex;          /* Flexbox有効 */
+      justify-content: center; /* 左右中央 */
+      align-items: center;    /* 上下中央 */
+      background: #70BCD1;    /* 背景色をここで統一してもOK */
+    }
 
+    model-viewer {
+      width: 90vw;            /* 画面幅の90%（スマホ対応） */
+      height: 90vh;           /* 画面高さの90% */
+      max-width: 1200px;      /* 大画面で広がりすぎないように（任意） */
+      max-height: 800px;
+    }
+  </style>
 </head>
 <body>
-<div style="width:100%; margin:0 auto; height:100vh;">
-<model-viewer
-alt="hanachan"
-src="Suzanne.glb"
-style="width:80%;height:80%;"                  
-background-color="#70BCD1"
-shadow-intensity="0.7"
-camera-controls
-autoplay
-auto-rotate ar>
 
-<button slot="ar-button"
-          style="position: absolute;
-                 bottom: 20px;           /* 下からの距離 */
-                 right: 20px;            /* 右からの距離（デフォルト位置に合わせる） */
-                 width: 100px;            /* 横幅を大きく！ */
-                 height: 100px;           /* 高さも大きく！ */
-                 font-size: 40px;        /* 文字やアイコン大きく */
-                 background: #ffffff88;  /* 半透明白で目立つ */
-                 color: #000;
-                 border: 3px solid #fff;
-                 border-radius: 50%;     /* 丸くするのも可愛い */
-                 box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-                 cursor: pointer;
-                 display: flex;
-                 align-items: center;
-                 justify-content: center;
-                 z-index: 10;">
-    AR
-    <!-- またはアイコンを入れる例: 👀 や 📱 など -->
-  </button>
-  
+<model-viewer
+  alt="hanachan"
+  src="Suzanne.glb"
+  background-color="#70BCD1"
+  shadow-intensity="0.7"
+  camera-controls
+  autoplay
+  auto-rotate
+  ar
+  ar-modes="webxr scene-viewer quick-look">   <!-- AR安定用に追加推奨 -->
 </model-viewer>
-</div>
+
 </body>
 </html>
-
