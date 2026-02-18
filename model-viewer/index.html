@@ -1,11 +1,31 @@
-<model-viewer src="/test-ar/model-viewer/index.html" ar ar-modes="webxr scene-viewer quick-look" camera-controls tone-mapping="neutral" poster="poster.webp" shadow-intensity="1">
-    <div class="progress-bar hide" slot="progress-bar">
-        <div class="update-bar"></div>
-    </div>
-    <button slot="ar-button" id="ar-button">
-        View in your space
-    </button>
-    <div id="ar-prompt">
-        <img src="https://modelviewer.dev/shared-assets/icons/hand.png">
-    </div>
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>マイ3Dモデル</title>
+  <style>
+    body   { margin:0; overflow:hidden; background:#111; }
+    model-viewer {
+      width: 100vw;
+      height: 100vh;
+    }
+  </style>
+  <!-- Google model-viewer を読み込む（ネットから直接） -->
+  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<model-viewer 
+  src="model-viewer/Suzanne.glb"            
+  alt="私の3Dモデル"
+  auto-rotate
+  camera-controls
+  ar
+  shadow-intensity="1"
+  environment-image="neutral"
+  background-color="#111111">
 </model-viewer>
+
+</body>
+</html>
