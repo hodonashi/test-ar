@@ -23,6 +23,13 @@
       max-width: 1200px;      /* 大画面で広がりすぎないように（任意） */
       max-height: 800px;
     }
+
+     /* ★デフォルトARボタンサイズアップ★ */
+    model-viewer::part(default-ar-button) {
+      transform: scale(2.0);
+      transform-origin: bottom right;
+      margin: 20px !important;  /* 端から少し離す */
+    }
   </style>
 </head>
 <body>
